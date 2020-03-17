@@ -8,6 +8,7 @@
     "serverstart": "DEBUG=backend_practice:* & npm run devstart"
   },
   "dependencies": {
+    "acorn": "^7.1.1",
     "async": "^3.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -15,6 +16,7 @@
     "express": "~4.16.1",
     "express-validator": "^6.4.0",
     "http-errors": "~1.6.3",
+    "minimist": "^1.2.5",
     "moment": "^2.24.0",
     "mongoose": "^5.8.10",
     "morgan": "~1.9.1",
