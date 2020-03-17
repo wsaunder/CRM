@@ -4,14 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-
+require('dotenv').config()
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');
 
 var app = express();
 
-var mongoDB = 'mongodb+srv://admin:platonic@nodeexpressjwttest-jpuf0.mongodb.net/local_library?retryWrites=true&w=majority'
+var mongoDB = process.env.Mongoose
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 
 var db = mongoose.connection

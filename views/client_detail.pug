@@ -1,0 +1,42 @@
+extends layout
+
+block content
+
+  h1 Client: #{client.name}
+  p Domain: #{client.domain}
+  .container
+    div(class="row")
+      .col(style='margin-left:20px;margin-top:20px')
+        p Email: #{client.email}
+        p Hours Available: #{client.hours_available}
+        p Hours Used: #{client.hours_used}
+        p Amount Paid: #{client.paid_amount}
+        p Amount Due: #{client.due_amount}
+      .col
+        p Deliverables: #{client.deliverables}
+  br
+  h4 Notes:
+  ul(style='border-style:inset; border-width: 2px')
+
+    p
+      each note in client_notes
+        p
+          dt
+            | #{note.date}
+          dd
+            | #{note.note}
+            br
+            a(href=note.url+'/update') Update
+            |
+            a(href=note.url+'/delete') Delete
+
+      else
+        p None.
+  p
+    a(href='/catalog/note/create/') Create new note
+  hr
+  p
+    a(href=client.url+'/delete') Delete client
+
+  p
+    a(href=client.url+'/update') Update Client

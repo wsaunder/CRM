@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each note in note_list
+      dt
+        a(href=note.url) #{note.date}
+      | #{note.note}
+      | #{note.client.name}
+
+    else
+      li There are no notes.

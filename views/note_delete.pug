@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+  p Do you really want to delete this note?
+
+  form(method='POST' action='')
+    div.form-group
+      input#authorid.form-control(type='hidden',name='noteid', required='true', value=note._id )
+
+    button.btn.btn-primary(type='submit') Delete

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Title: #{note.title}
+
+  p #[strong Client:]
+    a(href=note.client.url) #{note.client.name}
+  p #[strong Note:] #{note.note}
+  p #{note.date}
+
+
+    hr
+    p
+      a(href=note.url+'/delete') Delete Note
+    p
+      a(href=note.url+'/update') Update Note

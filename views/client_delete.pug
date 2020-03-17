@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 #{title}: #{client.name}
+  p= client.domain
+
+
+    p Do you really want to delete this Client?
+
+    form(method='POST' action='')
+      div.form-group
+        input#clientid.form-control(type='hidden',name='clientid', required='true', value=client._id )
+
+      button.btn.btn-primary(type='submit') Delete

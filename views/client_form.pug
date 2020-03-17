@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name:
+      input#name.form-control(type='text' placeholder='Name ' name='name' required='true' value=(undefined===client ? '' : client.name) )
+    div.form-group
+      label(for='company') Company:
+      input#company.form-control(type='text' placeholder='Company' name='company' required='true' value=(undefined===client ? '' : client.company))
+    div.form-group
+      label(for='email') Email:
+      input#email.form-control(type='text' placeholder='Email' name='email' required='true' value=(undefined===client ? '' : client.email))
+    div.form-group
+      label(for='paid_amount') Amount Paid:
+      input#paid_amount.form-control(type='number' placeholder='Amount Paid' name='paid_amount'  value=(undefined===client ? '' : client.paid_amount))
+    div.form-group
+      label(for='due_amount') Amount Due:
+      input#due_amount.form-control(type='number' placeholder='Amount Due' name='due_amount'  value=(undefined===client ? '' : client.due_amount))
+    div.form-group
+      label(for='hours_used') Hours Used:
+      input#hours_used.form-control(type='number' placeholder='Hours used' name='hours_used'  value=(undefined===client ? '' : client.hours_used))
+    div.form-group
+      label(for='hours_available') Hours Available:
+      input#hours_available.form-control(type='number' placeholder='Hours Available' name='hours_available'  value=(undefined===client ? '' : client.hours_available))
+    div.form-group
+      label(for='deliverables') Deliverables:
+      textarea#deliverables.form-control(type='textarea', placeholder='Deliverables' name='deliverables' rows='3' ) #{undefined===client ? '' : client.deliverables}
+    button.btn.btn-primary(type='submit') Submit
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
